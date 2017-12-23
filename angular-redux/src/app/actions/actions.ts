@@ -1,11 +1,11 @@
-import { Student } from '../app.state';.
+import { Student } from '../app.state';
 
-export const FETCH_USER = 'FETCH_USER';
+export const FETCH_STUDENT = 'FETCH_STUDENT';
 
-export interface FetchUserAction {
-    type: typeof FETCH_USER;
+export interface FetcStudentAction {
+    type: typeof FETCH_STUDENT;
     student: Student;
 }
 
-export type student = () => FetchUserAction;
-export const student: student = () => ({ FETCH_USER });
+export type studentInfo = (student: Student) => FetcStudentAction;
+export const studentInfo: studentInfo = (student) => ({ type: FETCH_STUDENT, student });

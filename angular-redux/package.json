@@ -28,6 +28,8 @@
     "@ngrx/store": "^4.1.1",
     "@ngrx/store-devtools": "^4.1.1",
     "core-js": "^2.4.1",
+    "json-server": "^0.12.1",
+    "rethinkdb": "^2.3.3",
     "rxjs": "^5.5.2",
     "zone.js": "^0.8.14"
   },
