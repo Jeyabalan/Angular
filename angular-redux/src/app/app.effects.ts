@@ -1,20 +1,25 @@
 import { Injectable } from '@angular/core';
-import { Actions } from '@ngrx/effects';
-import { Effect } from '@ngrx/effects';
-import { FETCH_STUDENT } from './actions/actions';
+import { Actions, Effect } from '@ngrx/effects';
+import * as StudentActions from './actions/actions';
 import { StudentService } from './studentService';
-
+import { Observable } from 'rxjs/Observable';
+import { map, switchMap } from 'rxjs/operators';
 
 @Injectable()
 export class StudentEffects {
 
-    @Effect() fetchStudent = this.action
-    .ofType('FETCH_STUDENT')
-    .switchMap(()=> this.api.fetchStudent())
-    .map(FetchStudentFullFilledAction);
+    @Effect()
+    fetchStudent = this.actions
+        .ofType(StudentActions.FETCH_STUDENT)
+        .pipe(switchMap(() => {
+                // tslint:disable-next-line:one-line
+                return this.api.fetchStudent().pipe(
+                    map(StudentActions.studentFullFilled)
+                );
+        }));
 
     constructor(
-        private action: Actions,
+        private actions: Actions,
         private api: StudentService
     ) {}
 }

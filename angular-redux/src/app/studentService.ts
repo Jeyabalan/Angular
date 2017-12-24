@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Student } from './app.state';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators/catchError';
 
 @Injectable()
 export class StudentService {
@@ -12,8 +12,8 @@ export class StudentService {
 
     fetchStudent(): Observable<Student[]> {
         return this.http
-            .get(this.API_PATH)
-            .map(res => res.json);
+            .get<Student[]>(this.API_PATH)
+            .pipe(catchError((error: any) => Observable.throw(error.json())));
     }
 }
 
