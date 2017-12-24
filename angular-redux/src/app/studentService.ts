@@ -12,7 +12,8 @@ export class StudentService {
 
     fetchStudent(): Observable<Student[]> {
         return this.http
-            .get<Student[]>(`${this.API_PATH}`);
+            .get(this.API_PATH)
+            .map(res => res.json);
     }
 }
 
