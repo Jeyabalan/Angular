@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Student } from './app.state';
+import { Store, select } from '@ngrx/store';
+import { getStudentInfo } from './app.selectors';
 
 @Component({
   selector: 'app-root',
@@ -6,4 +9,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  constructor(private store: Store<Student>) {
+    console.log(this.store);
+  }
 }

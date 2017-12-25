@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { StudentService } from './studentService';
 import { EffectsModule } from '@ngrx/effects/src/effects_module';
 import { StudentEffects } from './app.effects';
+import { StoreModule } from '@ngrx/store/src/store_module';
+import { student, studentInfo } from './app.reducers';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,8 @@ import { StudentEffects } from './app.effects';
   ],
   imports: [
     BrowserModule,
-    EffectsModule.forRoot([StudentEffects])
+    EffectsModule.forRoot([StudentEffects]),
+    StoreModule.forRoot(studentInfo)
   ],
   providers: [
     StudentService

@@ -18,10 +18,10 @@ export interface FetchStudentErrorAction {
     error: Error;
 }
 
-type fetchStudentAction = (student: Student) => FetcStudentAction;
+export type fetchStudentAction = (student: Student) => FetcStudentAction;
 export const fetchStudentAction: fetchStudentAction = (student) => ({ type: FETCH_STUDENT, student });
 
-type fetchStudentFullFilledAction = () => FetchStudentFullFilledAction;
+export type fetchStudentFullFilledAction = () => FetchStudentFullFilledAction;
 export const fetchStudentFullFilledAction: fetchStudentFullFilledAction = () => ({ type: FETCH_STUDENT_FULLFILLED });
 
 export type FetchStudentError = (error:  Error) => FetchStudentErrorAction;
