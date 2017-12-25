@@ -16,6 +16,5 @@ export class AppComponent {
   constructor(private store: Store<Student>) {
     this.store.dispatch({type: 'FETCH_STUDENT'});
     this.fetchStudent = this.store.select(getStudentInfo);
-    console.log(this.fetchStudent)
   }
 }
