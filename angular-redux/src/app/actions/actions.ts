@@ -12,8 +12,8 @@ export interface FetchStudentFullFilledAction {
     type: typeof FETCH_STUDENT_FULLFILLED;
 }
 
-export type studentInfo = (student: Student) => FetcStudentAction;
-export const studentInfo: studentInfo = (student) => ({ type: FETCH_STUDENT, student });
+export type fetchStudent = (student: Student) => FetcStudentAction;
+export const fetchStudent: fetchStudent = (student) => ({ type: FETCH_STUDENT, student });
 
-export type studentFullFilled = () => FetchStudentFullFilledAction;
-export const studentFullFilled: studentFullFilled = () => ({ type: FETCH_STUDENT_FULLFILLED });
+export type fetchStudentFullFillAction = () => FetchStudentFullFilledAction;
+export const fetchStudentFullFillAction: fetchStudentFullFillAction = () => ({ type: FETCH_STUDENT_FULLFILLED });

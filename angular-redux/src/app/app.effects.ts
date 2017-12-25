@@ -14,7 +14,7 @@ export class StudentEffects {
         .pipe(switchMap(() => {
                 // tslint:disable-next-line:one-line
                 return this.api.fetchStudent().pipe(
-                    map(StudentActions.studentFullFilled)
+                    map(StudentActions.fetchStudentFullFillAction)
                 );
         }));
 
