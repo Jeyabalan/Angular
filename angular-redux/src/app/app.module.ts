@@ -6,8 +6,10 @@ import { StudentService } from './studentService';
 import { EffectsModule } from '@ngrx/effects';
 import { StudentEffects } from './app.effects';
 import { StoreModule } from '@ngrx/store';
-import { student, studentInfo } from './app.reducers';
+import { student, studentInfo, reducerToken } from './app.reducers';
 import { HttpClientModule } from '@angular/common/http';
+
+Object.assign(reducerToken, student);
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   providers: [
     StudentService,
-    HttpClientModule
+    HttpClientModule,
+    { provide: reducerToken, useValue: studentInfo }
   ],
   bootstrap: [AppComponent]
 })
