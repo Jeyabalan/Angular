@@ -3,10 +3,11 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { StudentService } from './studentService';
-import { EffectsModule } from '@ngrx/effects/src/effects_module';
+import { EffectsModule } from '@ngrx/effects';
 import { StudentEffects } from './app.effects';
-import { StoreModule } from '@ngrx/store/src/store_module';
+import { StoreModule } from '@ngrx/store';
 import { student, studentInfo } from './app.reducers';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,11 +15,13 @@ import { student, studentInfo } from './app.reducers';
   ],
   imports: [
     BrowserModule,
-    EffectsModule.forRoot([StudentEffects]),
-    StoreModule.forRoot(studentInfo)
+    HttpClientModule,
+    StoreModule.forRoot(studentInfo),
+    EffectsModule.forRoot([StudentEffects])
   ],
   providers: [
-    StudentService
+    StudentService,
+    HttpClientModule
   ],
   bootstrap: [AppComponent]
 })

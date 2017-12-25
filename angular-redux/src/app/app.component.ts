@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Student } from './app.state';
-import { Store, select } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 import { getStudentInfo } from './app.selectors';
+import { fetchStudentAction } from './actions/actions';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,6 @@ import { getStudentInfo } from './app.selectors';
 })
 export class AppComponent {
   constructor(private store: Store<Student>) {
-    console.log(this.store);
+    this.store.dispatch({type: 'FETCH_STUDENT'});
   }
 }
