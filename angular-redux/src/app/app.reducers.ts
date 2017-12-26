@@ -8,5 +8,5 @@ import { StudentAction } from './student/student.reducers';
 export const reducerToken = new InjectionToken<ActionReducerMap<AppState>>('Registered Reducers');
 
 export const reducers: ActionReducer<AppState, StudentAction> = {
-    students
+    student
 };

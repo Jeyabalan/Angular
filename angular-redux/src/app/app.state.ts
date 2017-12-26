@@ -1,10 +1,9 @@
-import { Student } from './student/student.model';
-import { studentInitialState } from './student/student.state';
+import { studentInitialState, StudentState } from './student/student.state';
 
 export interface AppState {
-    students: Student[];
+    student: StudentState;
 }
 
 export const initialState: Partial<AppState> = {
-    students: studentInitialState
+    student: studentInitialState
 };
