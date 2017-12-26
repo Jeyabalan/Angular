@@ -14,8 +14,6 @@ export class AppComponent {
 
   constructor(private store: Store<AppState>) {
     this.store.dispatch({type: 'FETCH_STUDENT'});
-    this.store.select(getUserInfo).subscribe(student => {
-      this.fetchStudent = student;
-    });
+    this.store.select(getUserInfo);
   }
 }

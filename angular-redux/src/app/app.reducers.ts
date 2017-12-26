@@ -7,6 +7,6 @@ import { StudentAction, student } from './student/student.reducers';
 
 export const reducerToken = new InjectionToken<ActionReducerMap<AppState>>('Registered Reducers');
 
-export const reducers: ActionReducer<AppState, StudentAction> = {
+export const reducers: ActionReducerMap<AppState, StudentAction> = {
     student
 };
