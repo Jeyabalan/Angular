@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { Student } from './app.state';
+import { AppState } from './app.state';
 import { Store } from '@ngrx/store';
-import { getStudentInfo } from './app.selectors';
-import { fetchStudentAction } from './actions/actions';
 import { Observable } from 'rxjs/Observable';
+import { getUserInfo } from './student/student.selectors';
 
 @Component({
   selector: 'app-root',
@@ -11,10 +10,10 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  fetchStudent: Observable<Student>;
+  fetchStudent = [];
 
-  constructor(private store: Store<Student>) {
+  constructor(private store: Store<AppState>) {
     this.store.dispatch({type: 'FETCH_STUDENT'});
-    this.fetchStudent = this.store.select(getStudentInfo);
+    this.store.select(getUserInfo);
   }
 }

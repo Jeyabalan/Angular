@@ -4,12 +4,10 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { StudentService } from './studentService';
 import { EffectsModule } from '@ngrx/effects';
-import { StudentEffects } from './app.effects';
 import { StoreModule } from '@ngrx/store';
-import { student, studentInfo, reducerToken } from './app.reducers';
+import { reducerToken, reducers } from './app.reducers';
 import { HttpClientModule } from '@angular/common/http';
-
-Object.assign(reducerToken, student);
+import { StudentEffects } from './student/student.effects';
 
 @NgModule({
   declarations: [
@@ -18,13 +16,13 @@ Object.assign(reducerToken, student);
   imports: [
     BrowserModule,
     HttpClientModule,
-    StoreModule.forRoot(studentInfo),
+    StoreModule.forRoot(reducers, {initialState}),
     EffectsModule.forRoot([StudentEffects])
   ],
   providers: [
     StudentService,
     HttpClientModule,
-    { provide: reducerToken, useValue: studentInfo }
+    { provide: reducerToken, useValue: reducers }
   ],
   bootstrap: [AppComponent]
 })

@@ -1,9 +1,10 @@
-export interface Student {
-    id: number;
-    login: string;
+import { Student } from './student/student.model';
+import { studentInitialState } from './student/student.state';
+
+export interface AppState {
+    students: Student[];
 }
 
-export const initialState: Student = {
-    id: 1234,
-    login: 'giribala14@gmail.com'
+export const initialState: Partial<AppState> = {
+    students: studentInitialState
 };

@@ -1,22 +1,12 @@
-import { ActionReducer } from '@ngrx/store/src/models';
-import { Student } from './app.state';
-import { combineReducers } from '@ngrx/store/src/utils';
-import { FetchStudentFullFilledAction } from './actions/actions';
 import { InjectionToken } from '@angular/core';
-import { ActionReducerMap, State } from '@ngrx/store';
-
-export type studentInfo = ActionReducer<Student[], FetchStudentFullFilledAction>;
-export const studentInfo: studentInfo = (state = [], action) => {
-    switch (action.type) {
-        case 'FETCH_STUDENT_FULLFILLED':
-            return state;
-        default:
-            return state;
-    }
-};
-
-export const student = combineReducers ({
-    studentInfo
-});
+import { ActionReducerMap } from '@ngrx/store';
+import { Student } from './student/student.model';
+import { ActionReducer } from '@ngrx/store/src/models';
+import { AppState } from './app.state';
+import { StudentAction } from './student/student.reducers';
 
 export const reducerToken = new InjectionToken<ActionReducerMap<Student>>('Registered Reducers');
+
+export const reducers: ActionReducer<AppState, StudentAction> = {
+    students
+};

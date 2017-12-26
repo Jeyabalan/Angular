@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { Student } from './app.state';
 import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators/catchError';
+import { Student } from './student/student.model';
 
 @Injectable()
 export class StudentService {
