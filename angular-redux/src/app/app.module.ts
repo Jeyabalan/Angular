@@ -8,6 +8,7 @@ import { StoreModule } from '@ngrx/store';
 import { reducerToken, reducers } from './app.reducers';
 import { HttpClientModule } from '@angular/common/http';
 import { StudentEffects } from './student/student.effects';
+import { initialState } from './app.state';
 
 @NgModule({
   declarations: [

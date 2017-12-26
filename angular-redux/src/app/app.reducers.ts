@@ -3,7 +3,7 @@ import { ActionReducerMap } from '@ngrx/store';
 import { Student } from './student/student.model';
 import { ActionReducer } from '@ngrx/store/src/models';
 import { AppState } from './app.state';
-import { StudentAction } from './student/student.reducers';
+import { StudentAction, student } from './student/student.reducers';
 
 export const reducerToken = new InjectionToken<ActionReducerMap<AppState>>('Registered Reducers');
 
