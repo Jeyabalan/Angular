@@ -1,7 +1,14 @@
 import { Injectable } from '@angular/core';
 import { StudentService } from '../studentService';
 import { Actions, Effect } from '@ngrx/effects';
-import { FetchStudentAction, FETCH_STUDENT, fetchStudentFulFilledAction } from './action';
+import {
+    FetchStudentAction,
+    FETCH_STUDENT,
+    fetchStudentFulFilledAction,
+    CREATE_STUDENT,
+    createStudentFulFilledAction,
+    CreateStudentAction
+ } from './action';
 import { switchMap, map } from 'rxjs/operators';
 
 @Injectable()
@@ -15,6 +22,15 @@ export class StudentEffects {
                 map(fetchStudentFulFilledAction)
             ))
         );
+
+    @Effect()
+    addStudent = this.actions
+        .ofType<CreateStudentAction>(CREATE_STUDENT)
+        .pipe(switchMap(student =>
+            this.api.addStudent(student).pipe(
+                map(createStudentFulFilledAction)
+            )
+        ));
 
     constructor (
         private actions: Actions,
