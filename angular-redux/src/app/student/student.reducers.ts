@@ -2,7 +2,7 @@
 import { ActionReducer } from '@ngrx/store/src/models';
 import { Student } from './student.model';
 import { FetchStudentFulFilledAction, FETCH_STUDENT_FULFILLED, FetchStudentAction, FetchStudentErrorAction } from './student.action';
-import { combineReducers } from '@ngrx/store/src/utils';
+import { combineReducers } from '@ngrx/store';
 import { StudentState } from './student.state';
 
 export type StudentAction =

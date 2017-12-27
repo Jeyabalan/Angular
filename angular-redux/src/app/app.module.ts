@@ -17,7 +17,7 @@ import { initialState } from './app.state';
   imports: [
     BrowserModule,
     HttpClientModule,
-    StoreModule.forRoot(reducers, { initialState }),
+    StoreModule.forRoot(reducerToken, { initialState }),
     EffectsModule.forRoot([StudentEffects])
   ],
   providers: [

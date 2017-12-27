@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Actions } from '@ngrx/effects/src/actions';
 import { StudentService } from '../studentService';
-import { Effect } from '@ngrx/effects/src/effects_metadata';
+import { Actions, Effect } from '@ngrx/effects';
 import { FetchStudentAction, FETCH_STUDENT, fetchStudentFulFilledAction } from './student.action';
 import { switchMap, map } from 'rxjs/operators';
 
