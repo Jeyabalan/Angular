@@ -1,5 +1,6 @@
-import { Student } from './student.model';
+
 import { HttpErrorResponse } from '@angular/common/http/src/response';
+import { Student } from '../student.model';
 
 export const FETCH_STUDENT = 'FETCH_STUDENT';
 export const FETCH_STUDENT_FULFILLED = 'FETCH_STUDENT_FULFILLED';
