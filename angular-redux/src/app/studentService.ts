@@ -13,15 +13,13 @@ export class StudentService {
 
     fetchStudent(): Observable<Student[]> {
         return this.http
-            .get<Student[]>(this.API_PATH + 'students')
-            .pipe(catchError((error: any) => Observable.throw(error.json())));
+            .get<Student[]>(this.API_PATH + 'students');
     }
 
     addStudent(student): Observable<Student> {
         console.log(student);
         return this.http
-            .post<Student>(this.API_PATH + 'students', student)
-            .pipe(catchError((error: any) => Observable.throw(error.json())));
+            .post<Student>(this.API_PATH + 'students', student.student);
     }
 }
 

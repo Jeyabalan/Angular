@@ -7,7 +7,7 @@ export const CREATE_STUDENT_ERROR = 'CREATE_STUDENT_ERROR';
 
 export interface CreateStudentAction {
     type: typeof CREATE_STUDENT;
-    student: Student[];
+    student: Student;
 }
 
 export interface CreateStudentFulFilledAction {
@@ -20,7 +20,7 @@ export interface CreateStudentErrorAction {
     error: HttpErrorResponse;
 }
 
-export type createStudentAction = (student: Student[]) => CreateStudentAction;
+export type createStudentAction = (student: Student) => CreateStudentAction;
 export const createStudentAction: createStudentAction =
     (student) => ({ type: CREATE_STUDENT, student });
 

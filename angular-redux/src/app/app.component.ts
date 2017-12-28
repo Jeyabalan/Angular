@@ -3,7 +3,7 @@ import { AppState } from './app.state';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { getUserInfo } from './student/student.selectors';
-import { fetchStudentAction } from './student/action';
+import { fetchStudentAction, createStudentFulFilledAction, createStudentAction } from './student/action';
 import { Student } from './student/student.model';
 
 @Component({
@@ -13,6 +13,8 @@ import { Student } from './student/student.model';
 })
 export class AppComponent {
   fetchStudent: Observable<Student[]>;
+  email: string;
+  name: string;
 
   newStudent: Student;
 
@@ -22,6 +24,6 @@ export class AppComponent {
   }
 
   addNewStudent() {
-
+    this.store.dispatch(createStudentAction({email: this.email, id: this.name}));
   }
 }

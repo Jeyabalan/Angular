@@ -1,4 +1,4 @@
 export interface Student {
-    name: number;
+    id: string;
     email: string;
 }

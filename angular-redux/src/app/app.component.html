@@ -1,16 +1,16 @@
 <ul *ngFor="let student of fetchStudent | async">
-    <li>{{student.name}}</li>
+    <li>{{student.id}}</li>
 </ul>
 
 <form>
     <input
         type="text"
-        [(ngModel)]="newStudent.name"
+        [(ngModel)]="name"
         name="name"/>
         
     <input
         type="text"
-        [(ngModel)]="newStudent.email"
+        [(ngModel)]="email"
         name="email"/>
 
     <button (click)="addNewStudent()">Add</button>
