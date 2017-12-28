@@ -12,10 +12,16 @@ import { Student } from './student/student.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  fetchStudent = [];
+  fetchStudent: Observable<Student[]>;
+
+  newStudent: Student;
 
   constructor(private store: Store<AppState>) {
     this.store.dispatch(fetchStudentAction());
-    this.store.select(getUserInfo).subscribe(student => this.fetchStudent = student);
+    this.fetchStudent = this.store.select(getUserInfo);
+  }
+
+  addNewStudent() {
+
   }
 }

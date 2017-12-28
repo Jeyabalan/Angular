@@ -1,5 +1,6 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule} from '@angular/platform-browser';
+import { NgModule  } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { StudentService } from './studentService';
@@ -16,6 +17,7 @@ import { initialState } from './app.state';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     StoreModule.forRoot(reducerToken, { initialState }),
     EffectsModule.forRoot([StudentEffects])

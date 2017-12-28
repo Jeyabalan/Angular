@@ -7,9 +7,11 @@ import {
     fetchStudentFulFilledAction,
     CREATE_STUDENT,
     createStudentFulFilledAction,
-    CreateStudentAction
+    CreateStudentAction,
+    fetchStudentError
  } from './action';
 import { switchMap, map } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators/catchError';
 
 @Injectable()
 export class StudentEffects {
@@ -27,9 +29,10 @@ export class StudentEffects {
     addStudent = this.actions
         .ofType<CreateStudentAction>(CREATE_STUDENT)
         .pipe(switchMap(student =>
-            this.api.addStudent(student).pipe(
+            this.api.addStudent(student)
+             .pipe(
                 map(createStudentFulFilledAction)
-            )
+             )
         ));
 
     constructor (
