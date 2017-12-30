@@ -17,9 +17,8 @@ export class StudentService {
     }
 
     addStudent(student): Observable<Student> {
-        console.log(student);
         return this.http
-            .post<Student>(this.API_PATH + 'students', student.student);
+            .post<Student>(this.API_PATH + 'students', student);
     }
 }
 

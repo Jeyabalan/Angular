@@ -12,7 +12,7 @@ export interface CreateStudentAction {
 
 export interface CreateStudentFulFilledAction {
     type: typeof CREATE_STUDENT_FULFILLED;
-    newStudent: Student;
+    students: Student;
 }
 
 export interface CreateStudentErrorAction {
@@ -24,9 +24,9 @@ export type createStudentAction = (student: Student) => CreateStudentAction;
 export const createStudentAction: createStudentAction =
     (student) => ({ type: CREATE_STUDENT, student });
 
-export type createStudentFulFilledAction = (newStudent: Student) => CreateStudentFulFilledAction;
+export type createStudentFulFilledAction = (students: Student) => CreateStudentFulFilledAction;
 export const createStudentFulFilledAction: createStudentFulFilledAction =
-    (newStudent) => ({ type: CREATE_STUDENT_FULFILLED, newStudent });
+    (students) => ({ type: CREATE_STUDENT_FULFILLED, students });
 
 export type createStudentErrorAction = (error: HttpErrorResponse) => CreateStudentErrorAction;
 export const createStudentErrorAction: createStudentErrorAction =

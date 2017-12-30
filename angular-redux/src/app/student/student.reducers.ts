@@ -29,22 +29,13 @@ export const students: students = (state = [], action) => {
     switch (action.type) {
         case FETCH_STUDENT_FULFILLED:
             return action.students;
-        default:
-            return state;
-    }
-};
-
-export type createStudent = ActionReducer<Student[], StudentAction>;
-export const createStudent: createStudent = (state = [], action) => {
-    switch (action.type) {
         case CREATE_STUDENT_FULFILLED:
-            return state;
+            return [...state, action.students];
         default:
             return state;
     }
 };
 
 export const student = combineReducers<StudentState, StudentAction> ({
-    students,
-    createStudent
+    students
 });
