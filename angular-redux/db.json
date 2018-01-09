@@ -11,6 +11,56 @@
     {
       "email": "giribala14@gmail.com",
       "id": "Jeyabalan"
+    },
+    {
+      "type": "CREATE_STUDENT",
+      "student": {
+        "email": "Thilaga",
+        "id": "Thilaga"
+      },
+      "id": "0v3jI2o"
+    },
+    {
+      "type": "CREATE_STUDENT",
+      "student": {
+        "email": "Thilaga",
+        "id": "Thilaga"
+      },
+      "id": "_BARi_J"
+    },
+    {
+      "type": "CREATE_STUDENT",
+      "student": {
+        "email": "Thilaga",
+        "id": "Thilaga"
+      },
+      "id": "2zIuEY9"
+    },
+    {
+      "type": "CREATE_STUDENT",
+      "student": {},
+      "id": "cFsRBfc"
+    },
+    {
+      "type": "CREATE_STUDENT",
+      "student": {},
+      "id": "t9ZlW0n"
+    },
+    {
+      "type": "CREATE_STUDENT",
+      "student": {
+        "email": "sdgsdf",
+        "id": "svfda"
+      },
+      "id": "HjV71Yc"
+    },
+    {
+      "type": "CREATE_STUDENT",
+      "student": {
+        "email": "asdf",
+        "id": "sad"
+      },
+      "id": "36tOURa"
     }
   ]
 }

@@ -8,7 +8,11 @@ import {
     CREATE_STUDENT,
     createStudentFulFilledAction,
     CreateStudentAction,
-    fetchStudentError
+    fetchStudentError,
+    UpdateStudentAction,
+    UPDATE_STUDENT_FULFILLED,
+    DeleteStudentAction,
+    DELETE_STUDENT
  } from './action';
 import { switchMap, map } from 'rxjs/operators';
 import { catchError } from 'rxjs/operators/catchError';
@@ -34,6 +38,12 @@ export class StudentEffects {
                 map(createStudentFulFilledAction)
              )
         ));
+
+    @Effect()
+    updateStudent = this.actions
+        .ofType<DeleteStudentAction>(DELETE_STUDENT)
+        .pipe();
+
 
     constructor (
         private actions: Actions,
