@@ -17,7 +17,7 @@ import {
 import { switchMap, map } from 'rxjs/operators';
 import { catchError } from 'rxjs/operators/catchError';
 
-@Injectable()
+@Injectable()z
 export class StudentEffects {
 
     @Effect()
