@@ -10,11 +10,12 @@ import {
     CreateStudentFulFilledAction,
     CreateStudentErrorAction,
     CREATE_STUDENT,
-    CREATE_STUDENT_FULFILLED
+    CREATE_STUDENT_FULFILLED,
+    UPDATE_STUDENT_COUNT_FULFILLED,
+    UpdateStudentCountFulFiiledAction
 } from './action';
 import { combineReducers } from '@ngrx/store';
 import { StudentState } from './student.state';
-import { type } from 'os';
 
 export type StudentAction =
 FetchStudentFulFilledAction
@@ -22,7 +23,8 @@ FetchStudentFulFilledAction
 & FetchStudentErrorAction
 & CreateStudentAction
 & CreateStudentFulFilledAction
-& CreateStudentErrorAction;
+& CreateStudentErrorAction
+& UpdateStudentCountFulFiiledAction;
 
 export type students = ActionReducer<Student[], StudentAction>;
 export const students: students = (state = [], action) => {
@@ -31,6 +33,11 @@ export const students: students = (state = [], action) => {
             return action.students;
         case CREATE_STUDENT_FULFILLED:
             return [...state, action.students];
+        case UPDATE_STUDENT_COUNT_FULFILLED:
+            const item = state.find(s => s.id === action.id);
+            item.count++;
+            state[state.findIndex(s => s.id === action.id)] = item;
+            return state;
         default:
             return state;
     }

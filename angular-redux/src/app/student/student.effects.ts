@@ -10,14 +10,18 @@ import {
     CreateStudentAction,
     fetchStudentError,
     UpdateStudentAction,
+    updateStudentCountAction,
     UPDATE_STUDENT_FULFILLED,
     DeleteStudentAction,
-    DELETE_STUDENT
+    DELETE_STUDENT,
+    UPDATE_STUDENT_COUNT,
+    updateStudentCountFulFiiledAction,
+    UpdateStudentCountAction
  } from './action';
 import { switchMap, map } from 'rxjs/operators';
 import { catchError } from 'rxjs/operators/catchError';
 
-@Injectable()z
+@Injectable()
 export class StudentEffects {
 
     @Effect()
@@ -40,10 +44,9 @@ export class StudentEffects {
         ));
 
     @Effect()
-    updateStudent = this.actions
-        .ofType<DeleteStudentAction>(DELETE_STUDENT)
-        .pipe();
-
+    updateStudent= this.actions
+        .ofType<UpdateStudentCountAction>(UPDATE_STUDENT_COUNT)
+        .map(a => updateStudentCountFulFiiledAction(a.id));
 
     constructor (
         private actions: Actions,

@@ -2,65 +2,24 @@
   "students": [
     {
       "id": "JB",
-      "email": "jb@gmail.com"
+      "email": "jb@gmail.com",
+      "count": 0
     },
     {
       "id": "JT",
-      "email": "jt@gmail.com"
+      "email": "jt@gmail.com",
+      "count": 0
     },
     {
       "email": "giribala14@gmail.com",
-      "id": "Jeyabalan"
+      "id": "Jeyabalan",
+      "count": 0
     },
     {
-      "type": "CREATE_STUDENT",
-      "student": {
-        "email": "Thilaga",
-        "id": "Thilaga"
-      },
-      "id": "0v3jI2o"
+      "id": "E3YV2z_"
     },
     {
-      "type": "CREATE_STUDENT",
-      "student": {
-        "email": "Thilaga",
-        "id": "Thilaga"
-      },
-      "id": "_BARi_J"
-    },
-    {
-      "type": "CREATE_STUDENT",
-      "student": {
-        "email": "Thilaga",
-        "id": "Thilaga"
-      },
-      "id": "2zIuEY9"
-    },
-    {
-      "type": "CREATE_STUDENT",
-      "student": {},
-      "id": "cFsRBfc"
-    },
-    {
-      "type": "CREATE_STUDENT",
-      "student": {},
-      "id": "t9ZlW0n"
-    },
-    {
-      "type": "CREATE_STUDENT",
-      "student": {
-        "email": "sdgsdf",
-        "id": "svfda"
-      },
-      "id": "HjV71Yc"
-    },
-    {
-      "type": "CREATE_STUDENT",
-      "student": {
-        "email": "asdf",
-        "id": "sad"
-      },
-      "id": "36tOURa"
+      "id": "SHypPeB"
     }
   ]
 }

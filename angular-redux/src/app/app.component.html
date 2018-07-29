@@ -1,5 +1,8 @@
-<ul *ngFor="let student of fetchStudent | async">
-    <li>{{student.id}}</li>
+<ul *ngFor="let student of fetchStudent | async; let i = index">
+    <app-student [student]="student"
+                 [index]="i"
+                 (updateStudent)="updateStudent($event)">        
+    </app-student>
 </ul>
 
 <form>

@@ -11,10 +11,12 @@ import { reducerToken, reducers } from './app.reducers';
 import { HttpClientModule } from '@angular/common/http';
 import { StudentEffects } from './student/student.effects';
 import { initialState } from './app.state';
+import { StudentComponent } from './student/student/student.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    StudentComponent
   ],
   imports: [
     BrowserModule,
