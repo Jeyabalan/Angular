@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('sbm App', () => {
+describe('dynamic-component-loader App', () => {
   let page: AppPage;
 
   beforeEach(() => {

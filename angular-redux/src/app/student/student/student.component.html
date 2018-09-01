@@ -4,6 +4,6 @@
     <td> {{ student.id }} </td>
     <td> {{ student.email }} </td>
     <td> {{ student.count }} </td>
-    <td><button (click)="updateStudent.emit(student.id)" [disabled]="student.count > 10">update</button></td>
+    <td><button (click)="updateStudent.emit(student.id)" *ngIf="!(student.count > 10)">update</button></td>
   </tr>
 </table>
